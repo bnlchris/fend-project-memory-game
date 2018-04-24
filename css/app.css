@@ -16,18 +16,11 @@ body {
     padding: 0;
 }
 
-/**
- * Website background
- */
 body {
-  background: url('../img/websiteBackground.png');
+  background: linear-gradient(to right, lightblue, white);
   font-family: 'Coda', cursive;
 }
 
-/**
-  * Container box
-  *  Contains all elements of the game inside it.
-  */
 .container {
     display: flex;
     justify-content: center;
@@ -35,15 +28,10 @@ body {
     flex-direction: column;
 }
 
-/** Title: Memory Game */
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
-
-/**
- * Score Panel
- */
 
  .score-panel {
      text-align: left;
@@ -58,7 +46,6 @@ h1 {
      margin: 0 10px 0 0;
  }
 
-/** Removes the dot points and places the stars horizontally */
  .score-panel .stars li {
    list-style: none;
    display: inline-block;
@@ -69,7 +56,6 @@ h1 {
   display: inline-block;
 }
 
-/** Places the restart button on the RHS */
 .score-panel .restart {
     float: right;
     cursor: pointer;
@@ -107,28 +93,26 @@ h1 {
   visibility: hidden;
 }
 
-/** MODAL */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
     background-color: #ffffff;
 }
 
-  /* Modal Content/Box */
 .modal_content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding-left: 25%;
     padding-right: 25%;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%
 }
 
 .modal_content .congratulatory_message {
@@ -165,11 +149,6 @@ h1 {
   text-align: center;
 }
 
-/**
- * Deck
- * Styles for the deck of cards
- */
-
 .deck {
    width: 660px;
    min-height: 680px;
@@ -188,7 +167,6 @@ h1 {
    height: 125px;
    width: 125px;
    background: #2e3d49;
-   /** font-size: 0 makes the icons disappear */
    font-size: 0px;
    color: #ffffff;
    border-radius: 8px;

@@ -1,5 +1,3 @@
-$(document).ready(function() {
-
 //set variables
 
 let moves_taken = 0;
@@ -30,7 +28,7 @@ const time_taken_string = "Time taken: ";
 const moves_taken_string = "Moves taken: ";
 
   /*
-   * List of cards (total of 16)
+   * Make list from deck elements
    */
 
    const card_deck = [
@@ -324,5 +322,3 @@ const moves_taken_string = "Moves taken: ";
 
       return array;
   }
-
-});
