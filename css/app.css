@@ -17,8 +17,8 @@ body {
 }
 
 body {
-  background: linear-gradient(to right, lightblue, white);
-  font-family: 'Coda', cursive;
+    background: linear-gradient(to right, lightblue, white);
+    font-family: 'Coda', cursive;
 }
 
 .container {
@@ -33,65 +33,84 @@ h1 {
     font-weight: 300;
 }
 
- .score-panel {
-     text-align: left;
-     width: 400px;
-     margin-bottom: 10px;
- }
+/*
+ * Styles for the deck of cards
+ */
 
- .score-panel .stars {
-     margin: 0;
-     padding: 0;
-     display: inline-block;
-     margin: 0 10px 0 0;
- }
-
- .score-panel .stars li {
-   list-style: none;
-   display: inline-block;
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
 }
 
-.timer_container li {
-  list-style: none;
-  display: inline-block;
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
 }
 
 .score-panel .restart {
     float: right;
     cursor: pointer;
-    display: inline;
 }
 
-.moves_text {
-  margin: 0;
-  padding: 0;
-  display: inline;
-}
-
-.timer_container {
-  float: right;
-  margin-right: 10px;
-}
-
-.timer {
-  display: inline;
-}
-
-.colon_one {
-  visibility: hidden;
-}
-
-.minutes {
-  visibility: hidden;
-}
-
-.colon_two {
-  visibility: hidden;
-}
-
-.hours {
-  visibility: hidden;
-}
+/*
+Styles for Modal
+*/
 
 .modal {
     display: none;
@@ -102,101 +121,31 @@ h1 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: #ffffff;
+    background: linear-gradient(to right, lightblue, white);
 }
 
-.modal_content {
+.modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #fefefe;
     margin: 15% auto;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding: 20px;
     border: 1px solid #888;
-    width: 80%
+    width: 80%;
+    font-size: 20px;
 }
 
-.modal_content .congratulatory_message {
-    text-align: center;
-    font-weight: bold;
-    font-size: 32px;
-  }
-
-.modal_content p {
-    text-align: left;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.play_again_button {
-    background-color: #00B9A9;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 10px 20px;
+.playAgain {
+    background-color: : red;
     border: none;
-    font-family: 'Open Sans', sans-serif;;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.play_again_button:hover,
-.play_again_button:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.play_again_button_container {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.deck {
-   width: 660px;
-   min-height: 680px;
-   background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-   padding: 32px;
-   border-radius: 10px;
-   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   align-items: center;
-   margin: 0 0 3em;
-}
-
-.deck .card {
-   height: 125px;
-   width: 125px;
-   background: #2e3d49;
-   font-size: 0px;
-   color: #ffffff;
-   border-radius: 8px;
-   cursor: pointer;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-}
-
-.deck .card.open {
-   transform: rotateY(0);
-   background: #02b3e4;
-   cursor: default;
-   font-size: 33px;
-}
-
-.deck .card.match {
-   cursor: default;
-   background: #02ccba;
-   font-size: 33px;
-}
-
-.deck .card.not-a-match {
-   cursor: default;
-   background: #ff7256;
-   font-size: 33px;
-}
-
-.deck .card:hover {
-  opacity: 0.9;
-  cursor: pointer;
+    color: linear-gradient(to right, lightblue, white);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

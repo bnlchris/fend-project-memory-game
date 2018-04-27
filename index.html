@@ -8,12 +8,21 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 
+<!-- Modal will come into display after game has been finished -->
+
+<div class="modal">
+    <div class="modalContent">
+        <p class="modalText"></p>
+        <button class="playAgain">Play Again!</button>
+    </div>
+</div>
+
     <div class="container">
+
         <header>
             <h1>Memory Game</h1>
         </header>
@@ -21,97 +30,76 @@
         <section class="score-panel">
 
             <ul class="stars">
-                <li><i class="fa fa-star" id="first-star"></i></li>
-                <li><i class="fa fa-star" id="second-star"></i></li>
-                <li><i class="fa fa-star" id="third-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
             </ul>
 
-            <span class="moves">0</span> <p class="moves_text">Moves</p>
+            <span class="moves">0</span> Moves
 
             <div class="restart">
                 <i class="fa fa-repeat"></i>
             </div>
-
-            <div class="timer_container">
-                <ul class="timer">
-                    <li class="hours">00</li>
-                    <li class="colon_one">:</li>
-                    <li class="minutes">00</li>
-                    <li class="colon_two">:</li>
-                    <li class="seconds">0s</li>
-                </ul>
-            </div>
-
-            <div class="modal">
-                <div class="modal_content">
-                    <p class="congratulatory_message">Congratulations, you won!</p>
-                    <p class="performance_rating"></p>
-                    <p class="time_taken"></p>
-                    <p class="moves_taken"></p>
-
-                    <div class="play_again_button_container">
-                        <button class="play_again_button">Play again</button>
-                    </div>
-                </div>
-            </div>
-
         </section>
- 
+
         <ul class="deck">
             <li class="card">
-                <i class="fa fa-diamond" id="card_1"></i>
+                <i class="fa fa-diamond"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o" id="card_2"></i>
+                <i class="fa fa-paper-plane-o"></i>
             </li>
             <li class="card">
-                <i class="fa fa-anchor" id="card_3"></i>
+                <i class="fa fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bolt" id="card_4"></i>
+                <i class="fa fa-bolt"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube" id="card_5"></i>
+                <i class="fa fa-cube"></i>
             </li>
             <li class="card">
-                <i class="fa fa-anchor" id="card_6"></i>
+                <i class="fa fa-anchor"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf" id="card_7"></i>
+                <i class="fa fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle" id="card_8"></i>
+                <i class="fa fa-bicycle"></i>
             </li>
             <li class="card">
-                <i class="fa fa-diamond" id="card_9"></i>
+                <i class="fa fa-diamond"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb" id="card_10"></i>
+                <i class="fa fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-leaf" id="card_11"></i>
+                <i class="fa fa-leaf"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bomb" id="card_12"></i>
+                <i class="fa fa-bomb"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bolt" id="card_13"></i>
+                <i class="fa fa-bolt"></i>
             </li>
             <li class="card">
-                <i class="fa fa-bicycle" id="card_14"></i>
+                <i class="fa fa-bicycle"></i>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o" id="card_15"></i>
+                <i class="fa fa-paper-plane-o"></i>
             </li>
             <li class="card">
-                <i class="fa fa-cube" id="card_16"></i>
+                <i class="fa fa-cube"></i>
             </li>
-          </ul>
+        </ul>
+
+        <footer>
+            <h3>Your time score:</h3>
+            <span class="timer"> 0 minutes 0 seconds</span>
+        </footer>
 
     </div>
 
-<script type="text/javascript" src="js/script.js"></script>
-
+    <script src="js/app.js"></script>
 </body>
-
 </html>
