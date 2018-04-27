@@ -3,27 +3,28 @@
  */
 
 const card_deck = [
-    "fa fa-diamond",
-    "fa fa-paper-plane-o",
-    "fa fa-anchor",
-    "fa fa-bolt",
-    "fa fa-cube",
-    "fa fa-anchor",
-    "fa fa-leaf",
-    "fa fa-bicycle",
-    "fa fa-diamond",
-    "fa fa-bomb",
-    "fa fa-leaf",
-    "fa fa-bomb",
-    "fa fa-bolt",
-    "fa fa-bicycle",
-    "fa fa-paper-plane-o",
-    "fa fa-cube"];  
+    "fa-diamond",
+    "fa-paper-plane-o",
+    "fa-anchor",
+    "fa-bolt",
+    "fa-cube",
+    "fa-anchor",
+    "fa-leaf",
+    "fa-bicycle",
+    "fa-diamond",
+    "fa-bomb",
+    "fa-leaf",
+    "fa-bomb",
+    "fa-bolt",
+    "fa-bicycle",
+    "fa-paper-plane-o",
+    "fa-cube"];  
 
 // Set global variables for the DOM
 
 const deck = document.querySelector(".deck");
 const moves = document.querySelector(".moves");
+const playAgain = document.querySelector(".playAgain");
 const restart = document.querySelector(".restart");
 const stars = document.querySelector(".stars");
 
@@ -41,7 +42,7 @@ let timeStart = false;
 
 // variables to keep track of the game
 
-const = cards_open = [];
+let cards_open = [];
 let matches = 0;
 let numberOfMoves = moves.textContent;
 let numberOfStars = 3;
@@ -79,7 +80,7 @@ function startNewGame() {
 
 	// Return three stars to score-panel
 
-	stars.innerHTML = "<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>";
+	stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
 	numberOfStars = 3;
 }
 
@@ -114,7 +115,7 @@ function noMatch() {
 		cards_open[0].classList.remove("open", "show");
 		cards_open[1].classList.remove("open", "show");
 		cards_open = [];
-	}, 750)
+	}, 700)
 }
 
 function gameOver() {
@@ -143,7 +144,7 @@ function startTimer() {
 			minute++;
 			second = 0;
 		}
-	} 1000)
+	}, 1000)
 }
 
 // event listener for restart button
@@ -170,7 +171,7 @@ deck.addEventListener("click", function(event) {
 
 	if (cards_open.length < 2) {
 		if (!card.classList.contains("open")) {
-			flipCard();
+			flipCard(card);
 			cards_open.push(card);
 		}
 	}
@@ -187,10 +188,10 @@ deck.addEventListener("click", function(event) {
 		// keep track of number of moves and set stars accordingly
 
 		if (moves.innerText > 10) {
-			stars.innerHTML = "<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>";
+			stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
 			numberOfStars--;
 		} else if (moves.innerText > 20) {
-			stars.innerHTML = "<li><i class="fa fa-star"></i></li>";
+			stars.innerHTML = '<li><i class="fa fa-star"></i></li>';
 			numberOfStars--;
 		}
 	}
