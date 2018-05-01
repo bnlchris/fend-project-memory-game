@@ -121,8 +121,9 @@ function noMatch() {
 function gameOver() {
 	if (matches === 8) {
 		modal.style.display = "block";
-		modalText.textContent = "Congratulations! You made it in " + minute + " minutes and " + second + "!\nSince you completed the game in " + numberOfMoves + " moves you got " + numberOfStars + " stars!";
-		resetTimer();
+		modalText.textContent = "Congratulations! You made it in " + minute + " minutes and " + second + "seconds!\nSince you completed the game in " + numberOfMoves + " moves you got " + numberOfStars + " stars!";
+		startNewGame();
+		//resetTimer();
 	}
 }
 
@@ -153,7 +154,7 @@ restart.addEventListener("click", startNewGame);
 
 playAgain.addEventListener("click", function() {
 	modal.style.display = "none";
-	startNewGame;
+	startNewGame();
 })
 
 // event listener for starting the game
@@ -176,7 +177,7 @@ deck.addEventListener("click", function(event) {
 		}
 	}
 
-	if (cards_open === 2) {
+	if (cards_open.length === 2) {
 		if (cards_open[0].innerHTML === cards_open[1].innerHTML) {
 			youHaveAMatch();
 		} else {
@@ -187,10 +188,12 @@ deck.addEventListener("click", function(event) {
 
 		// keep track of number of moves and set stars accordingly
 
-		if (moves.innerText > 10) {
+		//if (moves.innerText === 11) {
+		if (numberOfMoves === 11) {
 			stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
 			numberOfStars--;
-		} else if (moves.innerText > 20) {
+		//} else if (moves.innerText === 21) {
+		} else if (numberOfMoves === 21) {
 			stars.innerHTML = '<li><i class="fa fa-star"></i></li>';
 			numberOfStars--;
 		}
