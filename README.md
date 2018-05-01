@@ -1,20 +1,16 @@
-# Memory Game Project
+# Memory Game Project by Udacity
 
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Explanations] (#explanations)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
+The starter project had some HTML and CSS styling to display a static version of the Memory Game project. My task, primarily, was to write the JavaScript code.
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
+## Explanations
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+The classic Memory game consists of a set of cards. Each item on the cards comes as a pair. The player's objective is to find all pairs of cards, the less tries the better.
