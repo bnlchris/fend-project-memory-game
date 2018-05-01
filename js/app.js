@@ -186,13 +186,12 @@ deck.addEventListener("click", function(event) {
 
 	if (cards_open.length === 2) {
 		// keep track of number of moves
+		addMove(card);
 		
 		if (cards_open[0].innerHTML === cards_open[1].innerHTML) {
 			youHaveAMatch();
-			addMove(card);
 		} else {
 			noMatch();
-			addMove(card);
 		}
 
 		// set stars according to number of moves
