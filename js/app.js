@@ -118,10 +118,17 @@ function noMatch() {
 	}, 700)
 }
 
+function addMove(card) {
+	if (!card.classList.contains("match")) {
+		numberOfMoves++;
+		moves.innerText = numberOfMoves;
+	}
+}
+
 function gameOver() {
 	if (matches === 8) {
 		modal.style.display = "block";
-		modalText.textContent = "Congratulations! You made it in " + minute + " minutes and " + second + "seconds!\nSince you completed the game in " + numberOfMoves + " moves you got " + numberOfStars + " stars!";
+		modalText.textContent = "Congratulations! You made it in " + minute + " minutes and " + second + " seconds!\nAll in all, you completed the game within " + numberOfMoves + " moves and earned " + numberOfStars + " stars!";
 		startNewGame();
 		//resetTimer();
 	}
@@ -178,18 +185,18 @@ deck.addEventListener("click", function(event) {
 	}
 
 	if (cards_open.length === 2) {
+		// keep track of number of moves
+		addMove(card);
 		if (cards_open[0].innerHTML === cards_open[1].innerHTML) {
 			youHaveAMatch();
 		} else {
 			noMatch();
 		}
-		numberOfMoves++;
-		moves.innerText = numberOfMoves;
 
-		// keep track of number of moves and set stars accordingly
+		// set stars according to number of moves
 
-		//if (moves.innerText === 11) {
-		if (numberOfMoves === 11) {
+		//if (moves.innerText === 15) {
+		if (numberOfMoves === 15) {
 			stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
 			numberOfStars--;
 		//} else if (moves.innerText === 21) {
