@@ -108,6 +108,11 @@ h1 {
     cursor: pointer;
 }
 
+.timer {
+    display: none;
+    float: center;
+}
+
 /*
 Styles for Modal
 */
