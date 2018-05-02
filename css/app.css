@@ -150,3 +150,39 @@ Styles for Modal
     margin: 4px 2px;
     cursor: pointer;
 }
+
+/*
+Code to ensure responsivenesss
+*/
+
+@media screen and (max-width: 800px) {
+    .deck {
+        width: 400px;
+        min-height: 400px;
+        padding: 22px;
+    }
+
+    .deck .card {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .deck {
+        width: 250px;
+        min-height: 250px;
+        padding: 15px;
+    }
+
+    .deck .card {
+        height: 50px;
+        width: 50px;
+    }
+
+    .score-panel {
+        text-align: left;
+        width: 150px;
+        margin-bottom: 10px;
+    }
+}
