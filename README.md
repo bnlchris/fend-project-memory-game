@@ -22,6 +22,6 @@ Each time you flip two cards the number of moves will increase by one.
 
 When all pairs have been found a message will pop up, showing the total number of moves and the time it took the player to finish the game
 
-##Resources
+## Resources
 
 For the JavaScript Code, I used a given function to shuffle the cards radomly. The original code can he found [here](http://stackoverflow.com/a/2450976).
