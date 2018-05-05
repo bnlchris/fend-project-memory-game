@@ -171,6 +171,10 @@ playAgain.addEventListener("click", function() {
 
 deck.addEventListener("click", function(event) {
 	
+	// start only when card is clicked
+
+	if (event.target.nodeName === "LI") {
+
 	// start timer
 
 	if (!timeStart) {
@@ -213,6 +217,7 @@ deck.addEventListener("click", function(event) {
 		}
 	}
 	gameOver();
+}
 })
 
 // Shuffle function from http://stackoverflow.com/a/2450976
