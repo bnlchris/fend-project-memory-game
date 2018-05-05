@@ -22,6 +22,7 @@ const card_deck = [
 
 // Set global variables for the DOM
 
+let myCards = document.getElementsByClassName("card");
 const deck = document.querySelector(".deck");
 const moves = document.querySelector(".moves");
 const playAgain = document.querySelector(".playAgain");
@@ -120,8 +121,7 @@ function noMatch() {
 }
 
 function addMove(card) {
-	card = event.target.parentElement;
-	if (!card.classList.contains("card")) {
+	if (!card.classList.contains("match")) {
 		numberOfMoves++;
 		moves.innerText = numberOfMoves;
 	}
@@ -180,7 +180,6 @@ deck.addEventListener("click", function(event) {
 	}
 
 	let card = event.target;
-
 
 	// conditional for not clicking same card twice
 
