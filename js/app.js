@@ -120,7 +120,8 @@ function noMatch() {
 }
 
 function addMove(card) {
-	if (!card.classList.contains("match")) {
+	card = event.target.parentElement;
+	if (!card.classList.contains("card")) {
 		numberOfMoves++;
 		moves.innerText = numberOfMoves;
 	}
@@ -179,6 +180,9 @@ deck.addEventListener("click", function(event) {
 	}
 
 	let card = event.target;
+
+
+	// conditional for not clicking same card twice
 
 	if (cards_open.length < 2) {
 		if (!card.classList.contains("open")) {
